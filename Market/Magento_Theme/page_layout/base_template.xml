@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_layout.xsd">
+    <update handle="1column"/>
+
+    <referenceContainer name="header.panel" remove="true" />
+    <referenceContainer name="header-wrapper" remove="true" />
+    <referenceContainer name="page.wrapper">
+        <container name="webgate_header"   label="Page Header Container" before="main.content" htmlTag="header" htmlClass="page-header row"/>
+        <container name="webgate_header-logo"   htmlTag="div" htmlClass="header-logo col-md-3"/>
+        <container name="webgate_header-menu"    htmlTag="div" htmlClass="header-menu col-md-7"/>
+        <container name="webgate_header-cart"     htmlTag="div" htmlClass="header-cart col-md-2"/>
+
+    </referenceContainer>
+     <!--<move element="webgate_header-logo" destination="webgate_header"/>-->
+     <move element="webgate_header-menu" destination="webgate_header"/>
+     <move element="webgate_header-cart" destination="webgate_header"/>
+     <!--<move element="logo" destination="webgate_header-logo"/>-->
+     <move element="minicart" destination="webgate_header-cart"/>
+    <referenceContainer name="webgate_header-menu">
+        <block class="Magento\Cms\Block\Block" name="home-page-menu">
+            <arguments>
+                <argument name="block_id" xsi:type="string">base-home-page-menu</argument>
+            </arguments>
+        </block>
+    </referenceContainer>
+
+     <referenceContainer name="navigation.sections" remove="true" />
+     <referenceContainer name="minicart" remove="true" />
+    <referenceContainer name="page.main.title" remove="true" />
+
+
+
+
+
+</layout>
